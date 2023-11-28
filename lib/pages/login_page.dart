@@ -153,7 +153,7 @@ class LoginPage extends StatelessWidget {
       );
     }
 
-    Widget signInButton() {
+    Widget registerButton() {
       return Container(
         height: 50,
         width: double.infinity,
@@ -181,7 +181,7 @@ class LoginPage extends StatelessWidget {
 
     Widget footer() {
       return Container(
-        margin: const EdgeInsets.only(bottom: 30),
+        margin: const EdgeInsets.only(top: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -214,23 +214,18 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor1,
-      resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(
+        child: ListView(
+          padding: EdgeInsets.symmetric(
             horizontal: defaultMargin,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(),
-              emailInput(),
-              passwordInput(),
-              signInButton(),
-              const Spacer(),
-              footer(),
-            ],
-          ),
+          children: [
+            header(),
+            emailInput(),
+            passwordInput(),
+            registerButton(),
+            footer(),
+          ],
         ),
       ),
     );
