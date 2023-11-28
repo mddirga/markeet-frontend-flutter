@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:markeet/pages/home/home_page.dart';
 import 'package:markeet/pages/login_page.dart';
+import 'package:markeet/pages/register_page.dart';
 import 'package:markeet/pages/splash_page.dart';
 
 void main() {
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const SplashPage(),
+        '/home': (context) => const HomePage(),
         '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
       },
     );
   }
