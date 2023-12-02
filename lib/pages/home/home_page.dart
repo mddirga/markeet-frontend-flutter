@@ -16,24 +16,33 @@ class HomePage extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Hallo, Guest1234',
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 15,
-                      fontWeight: semiBold,
-                    ),
+              child: Container(
+                margin: const EdgeInsets.only(right: 4),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.search_rounded,
+                        size: 18,
+                        color: Colors.grey,
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        'Cari di Markeet',
+                        style: subtitleTextStyle.copyWith(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    '@guest1234',
-                    style: subtitleTextStyle.copyWith(
-                      fontSize: 12,
-                      fontWeight: regular,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             GestureDetector(
@@ -44,13 +53,46 @@ class HomePage extends StatelessWidget {
                 label: Text(
                   '4',
                   style: secondaryTextStyle.copyWith(
-                    fontSize: 10,
+                    fontSize: 8,
                     fontWeight: regular,
                   ),
                 ),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 6),
+                  child: const Icon(
+                    Icons.notifications_none,
+                    size: 24,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 6),
                 child: const Icon(
-                  Icons.notifications_none_rounded,
-                  size: 26,
+                  Icons.mail_outline,
+                  size: 23,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 6),
+                child: const Icon(
+                  Icons.shopping_bag_outlined,
+                  size: 24,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 6),
+                child: const Icon(
+                  Icons.menu,
+                  size: 24,
                 ),
               ),
             ),
@@ -61,8 +103,8 @@ class HomePage extends StatelessWidget {
 
     Widget categories() {
       return Container(
-        margin: EdgeInsets.only(
-          top: defaultMargin,
+        margin: const EdgeInsets.only(
+          top: 15,
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
