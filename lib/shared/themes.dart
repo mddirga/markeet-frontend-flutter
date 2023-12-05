@@ -22,6 +22,7 @@ Color primaryTextColor = const Color(0xff2E2E2E);
 Color primaryCardColor = const Color(0xffECEDEF);
 Color secondaryTextColor = const Color(0xffF1F0F2);
 Color transparentColor = Colors.transparent;
+Color borderColor = Colors.grey;
 
 TextStyle primaryTextStyle =
     TextStyle(fontFamily: "Open+Sans", color: primaryTextColor);

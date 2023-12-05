@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:markeet/shared/themes.dart';
+import 'package:markeet/shared/widgets/product_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,33 +17,24 @@ class HomePage extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(right: 4),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.search_rounded,
-                        size: 18,
-                        color: Colors.grey,
-                      ),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      Text(
-                        'Cari di Markeet',
-                        style: subtitleTextStyle.copyWith(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Halo, Guest1234',
+                    style: primaryTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: semiBold,
+                    ),
                   ),
-                ),
+                  Text(
+                    '@guest1234',
+                    style: subtitleTextStyle.copyWith(
+                      fontSize: 12,
+                      fontWeight: regular,
+                    ),
+                  ),
+                ],
               ),
             ),
             GestureDetector(
@@ -57,41 +49,8 @@ class HomePage extends StatelessWidget {
                     fontWeight: regular,
                   ),
                 ),
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 6),
-                  child: const Icon(
-                    Icons.notifications_none,
-                    size: 24,
-                  ),
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 6),
                 child: const Icon(
-                  Icons.mail_outline,
-                  size: 23,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 6),
-                child: const Icon(
-                  Icons.shopping_bag_outlined,
-                  size: 24,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 6),
-                child: const Icon(
-                  Icons.menu,
+                  Icons.notifications_none,
                   size: 24,
                 ),
               ),
@@ -242,10 +201,53 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget popularProductsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: defaultMargin,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: Text(
+          'Popular Products',
+          style: primaryTextStyle.copyWith(
+            fontSize: 14,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget popularProducts() {
+      return Container(
+        margin: const EdgeInsets.only(top: 12),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(
+                width: defaultMargin,
+              ),
+              Row(
+                children: [
+                  ProductCard(),
+                  ProductCard(),
+                  ProductCard(),
+                  ProductCard(),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return ListView(
       children: [
         header(),
         categories(),
+        popularProductsTitle(),
+        popularProducts(),
       ],
     );
   }
