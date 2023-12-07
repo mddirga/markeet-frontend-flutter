@@ -45,6 +45,9 @@ TextStyle textFormTextStyle =
 TextStyle registerTextStyle =
     TextStyle(fontFamily: "Open+Sans", color: primaryColor);
 
+TextStyle buttonTextStyle =
+    TextStyle(fontFamily: "Open+Sans", color: backgroundColor2);
+
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
