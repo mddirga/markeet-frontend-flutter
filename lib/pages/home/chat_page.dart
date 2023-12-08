@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:markeet/shared/themes.dart';
+import 'package:markeet/shared/widgets/chat_tile.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -22,7 +23,7 @@ class ChatPage extends StatelessWidget {
       );
     }
 
-    Widget content() {
+    Widget emptyChat() {
       return Expanded(
         child: Container(
           width: double.infinity,
@@ -45,16 +46,6 @@ class ChatPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 8,
-              ),
-              Text(
-                'You have never done transaction',
-                style: textFormTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: medium,
-                ),
-              ),
-              const SizedBox(
                 height: 30,
               ),
               SizedBox(
@@ -72,7 +63,7 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'Explore',
+                    'Explore Store',
                     style: buttonTextStyle.copyWith(
                       fontSize: 14,
                       fontWeight: medium,
@@ -80,6 +71,23 @@ class ChatPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget content() {
+      return Expanded(
+        child: Container(
+          width: double.infinity,
+          color: backgroundColor2,
+          child: ListView(
+            padding: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            children: [
+              ChatTile(),
             ],
           ),
         ),
