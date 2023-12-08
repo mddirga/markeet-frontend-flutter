@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:markeet/pages/detail_chat_page.dart';
 import 'package:markeet/pages/home/main_page.dart';
 import 'package:markeet/pages/login_page.dart';
 import 'package:markeet/pages/notification_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/notification': (context) => const NotificationPage(),
+        '/detail-chat': (context) => const DetailChatPage(),
       },
     );
   }
